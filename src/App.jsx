@@ -1,20 +1,22 @@
 import React from "react";
-import MyModal from "./components/MyModal";
+import { DarkThemeToggle, Flowbite } from "flowbite-react";
+import SiteNavbar from "./components/layout/SiteNavbar";
+import SiteBody from "./components/layout/SiteBody";
+import SiteFooter from "./components/layout/SiteFooter";
 
 class App extends React.Component {
     render() {
         return (
-            <>
-                <div className="container mx-auto bg-gray-200 rounded-xl shadow border p-8 m-10">
-                    <p className="text-3xl text-gray-700 font-bold mb-5">
-                        Welcome!
-                    </p>
-                    <p className="text-gray-500 text-lg">
-                        To open the tailwind modal, click here:
-                        <MyModal />
-                    </p>
+            <Flowbite>
+                <div className="min-h-screen flex flex-col justify-between" >
+                    <div className="fixed right-0 top-2 bg-gray-200 dark:bg-gray-900 w-24 rounded-l-lg transition-colors">
+                        <DarkThemeToggle />
+                    </div>
+                    <SiteNavbar />
+                    <SiteBody />
+                    <SiteFooter />
                 </div>
-            </>
+            </Flowbite >
         );
     }
 }

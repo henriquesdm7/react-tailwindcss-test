@@ -11,16 +11,27 @@ class MyModal extends React.Component {
         };
     }
 
+    static defaultProps = {
+        withButton: true,
+    }
+
+    withButton() {
+        return (
+            <Button
+                outline={true}
+                gradientDuoTone="greenToBlue"
+                onClick={() => { this.setState({ modalVisible: true }) }}
+            >
+                Ver Modal
+            </Button>
+        );
+    }
+
     render() {
         return (
             <>
-                <Button
-                    outline={true}
-                    gradientDuoTone="greenToBlue"
-                    onClick={() => { this.setState({ modalVisible: true }) }}
-                >
-                    Toggle modal
-                </Button>
+                {this.props.withButton ? this.withButton() : null}
+
                 <Modal
                     show={this.state.modalVisible}
                     onClose={() => { this.setState({ modalVisible: false }) }}
