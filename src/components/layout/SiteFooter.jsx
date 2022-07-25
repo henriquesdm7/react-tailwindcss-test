@@ -1,6 +1,7 @@
 import { Footer } from 'flowbite-react';
 import React, { Component } from 'react';
-import BsGithub from './../../assets/svg/github.svg';
+import { ReactComponent as BsGithub } from './../../assets/svg/github.svg';
+import { ReactComponent as BsLinkedin } from './../../assets/svg/linkedin.svg';
 
 class SiteFooter extends Component {
     render() {
@@ -15,21 +16,22 @@ class SiteFooter extends Component {
                             name="Flowbite"
                         />
                         <Footer.LinkGroup>
-                                <Footer.Icon
-                                    icon={BsGithub}
+                            <div className="mx-2">
+                                <a href='https://github.com/henriquesdm7'
+                                    target="_blank"
+                                    rel='noreferrer'
                                 >
-                                    </Footer.Icon>
-                            <Footer.Link href="#">
-                            </Footer.Link>
-                            <Footer.Link href="#">
-                                Privacy Policy
-                            </Footer.Link>
-                            <Footer.Link href="#">
-                                Licensing
-                            </Footer.Link>
-                            <Footer.Link href="#">
-                                Contact
-                            </Footer.Link>
+                                    <Footer.Icon icon={BsGithub} />
+                                </a>
+                            </div>
+                            <div className="mx-2">
+                                <a href='https://www.linkedin.com/in/henrique-dos-santos-dias-mattos-822067161/'
+                                    target="_blank"
+                                    rel='noreferrer'
+                                >
+                                    <Footer.Icon icon={BsLinkedin} />
+                                </a>
+                            </div>
                         </Footer.LinkGroup>
                     </div>
                     <Footer.Divider />

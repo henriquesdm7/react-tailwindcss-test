@@ -1,5 +1,6 @@
 import { Avatar, Dropdown, Navbar } from 'flowbite-react';
 import React, { Component } from 'react'
+import Clock from '../content/Clock';
 
 class SiteNavbar extends Component {
     render() {
@@ -9,28 +10,29 @@ class SiteNavbar extends Component {
                 rounded={false}
                 border={true}
             >
-                <Navbar.Brand href="https://flowbite.com/">
+                <Navbar.Brand href="#">
                     <img
                         src="https://flowbite.com/docs/images/logo.svg"
                         className="mr-3 h-6 sm:h-9"
                         alt="Flowbite Logo"
                     />
                     <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-                        Flowbite
+                        Teste de Aplicação React
                     </span>
                 </Navbar.Brand>
+                <Clock />
                 <div className="flex md:order-2">
                     <Dropdown
                         arrowIcon={false}
                         inline={true}
-                        label={<Avatar rounded={true} />}
+                        label={<Avatar rounded={true} status="online" statusPosition="bottom-left" />}
                     >
                         <Dropdown.Header>
                             <span className="block text-sm">
-                                Bonnie Green
+                                Usuário Teste
                             </span>
                             <span className="block truncate text-sm font-medium">
-                                name@flowbite.com
+                                sem@login.atualmente
                             </span>
                         </Dropdown.Header>
                         <Dropdown.Item>
